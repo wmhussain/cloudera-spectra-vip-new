@@ -177,6 +177,10 @@ def prepareAndImportConf(options):
                           networkSecurityGroup,
                           virtualNetworkResourceGroup, virtualNetwork, subnetName,
                           computeResourceGroup, hostFqdnSuffix)
+    setInstanceParameters(conf, 'instances.gateway', gatewayType, networkSecurityGroupResourceGroup,
+                          networkSecurityGroup,
+                          virtualNetworkResourceGroup, virtualNetwork, subnetName,
+                          computeResourceGroup, hostFqdnSuffix)
     setInstanceParameters(conf, 'cloudera-manager.instance', edgeType,
                           networkSecurityGroupResourceGroup, networkSecurityGroup,
                           virtualNetworkResourceGroup, virtualNetwork, subnetName,
@@ -186,6 +190,10 @@ def prepareAndImportConf(options):
                           virtualNetworkResourceGroup, virtualNetwork, subnetName,
                           computeResourceGroup, hostFqdnSuffix)
     setInstanceParameters(conf, 'cluster.workers.instance', masterType,
+                          networkSecurityGroupResourceGroup, networkSecurityGroup,
+                          virtualNetworkResourceGroup, virtualNetwork, subnetName,
+                          computeResourceGroup, hostFqdnSuffix)
+    setInstanceParameters(conf, 'cluster.gateway.instance', gatewayType,
                           networkSecurityGroupResourceGroup, networkSecurityGroup,
                           virtualNetworkResourceGroup, virtualNetwork, subnetName,
                           computeResourceGroup, hostFqdnSuffix)
