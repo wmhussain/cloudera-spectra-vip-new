@@ -4,18 +4,21 @@
     "parameters": {
         "AzureActiveDirectoryClientID": {
             "type": "securestring",
+            "defaultValue": "c0fbd9ff-1d7c-4cc1-8c2b-5132169fd790",
             "metadata": {
                 "description": "ID of the Azure Active Directory (AAD) Service Principal Cloudera Director uses to authenticate with Azure. You must create a Service Principal in AAD prior to deploying this template."
             }
         },
         "AzureActiveDirectoryClientSecret": {
             "type": "securestring",
+            "defaultValue": "",
             "metadata": {
                 "description": "This is the secret/password of the Azure Active Directory Service principal specified above."
             }
         },
         "servicePrincipalObjectId": {
             "type": "securestring",
+            "defaultValue": "8cf8fb93-5fb0-4354-bfe7-8e1d4d93a4b8",
             "metadata": {
                 "description": "The AAD object ID (guid) of the service principal. This service principal will be given permissions on the root folder of the Data Lake Store account."
             }
@@ -24,7 +27,7 @@
     "variables": {
         "AzureSubscriptionID": "[subscription().subscriptionId]",
         "AzureActiveDirectoryTenantID": "[subscription().tenantId]",
-        "scriptsUri": "https://raw.githubusercontent.com/sysgain/cloudera-spectra-vip-new/master/",
+        "scriptsUri": "https://raw.githubusercontent.com/wmhussain/cloudera-spectra-vip-new/master/",
         "share-resourcesUri": "[concat(variables('scriptsUri'), 'nested/shared-resources-new-vnet.json')]",
         "vnetUri": "[concat(variables('scriptsUri'), 'nested/update-new-vnet-dns.json')]",
         "networkRestartUri": "[concat(variables('scriptsUri'), 'nested/network-restart-new-vnet.json')]",
